@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# File target
+file="/root/.config/project/admin/var.txt"
+
+# Periksa apakah file ada
+if [[ ! -f "$file" ]]; then
+  echo "File tidak ditemukan di $file!"
+  exit 1
+fi
+
+# Meminta teks baru yang akan ditambahkan
+read -p "Masukkan id telegram baru: " new_text
+
+# Pola untuk baris ADMIN yang akan diubah
+pattern='^ADMIN="2435566'\''5366337'\''536465'
+
+# Perbarui baris yang sesuai dengan pola
+sed -i "/$pattern/s/\"$/'$new_text\"/" "$file"
+
+echo "Teks '$new_text' berhasil ditambahkan ke variabel ADMIN di file $file!"
