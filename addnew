@@ -10,7 +10,7 @@ if [[ ! -f "$file" ]]; then
 fi
 
 # Meminta teks baru yang akan ditambahkan
-read -p "Masukkan id telegram baru: " new_text
+read -p "Masukkan teks baru: " new_text
 
 # Pola untuk baris ADMIN yang akan diubah
 pattern='^ADMIN="2435566'\''5366337'\''536465'
